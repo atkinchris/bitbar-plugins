@@ -7,11 +7,15 @@
 
 export PATH='/usr/local/bin:/usr/bin:$PATH'
 
-ETH=$(jq -r '.lprice' <<< $(curl -s -k https://cex.io/api/last_price/ETH/EUR))
+ETH=$(jq -r '.lprice' <<< $(curl -s -k https://cex.io/api/last_price/ETH/GBP))
 BTC=$(jq -r '.lprice' <<< $(curl -s -k https://cex.io/api/last_price/BTC/GBP))
+BCH=$(jq -r '.lprice' <<< $(curl -s -k https://cex.io/api/last_price/BCH/USD))
 
-printf "BTC: £"
-printf "%0.2f" $BTC
+printf " BCH: $"
+printf "%0.0f" $BCH
 
-printf " ETH: €"
-printf "%0.2f" $ETH
+printf " BTC: £"
+printf "%0.0f" $BTC
+
+printf " ETH: £"
+printf "%0.0f" $ETH
