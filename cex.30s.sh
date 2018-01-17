@@ -7,8 +7,8 @@
 
 export PATH='/usr/local/bin:/usr/bin:$PATH'
 
-ETH=$(jq -r '.lprice' <<< $(curl -s -k https://cex.io/api/last_price/ETH/EUR))
-XRP=$(jq -r '.lprice' <<< $(curl -s -k https://cex.io/api/last_price/XRP/EUR))
+ETH=$(jq -r '.ask' <<< $(curl -s -k https://cex.io/api/ticker/ETH/EUR))
+XRP=$(jq -r '.ask' <<< $(curl -s -k https://cex.io/api/ticker/XRP/EUR))
 
 printf " ETH: "
 printf "%0.2f" $ETH
